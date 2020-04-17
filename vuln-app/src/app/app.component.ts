@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { compile } from "angular-expressions";
 
 @Component({
   selector: 'app-root',
