@@ -1,2 +1,8 @@
 <p>vuln-calculator works!</p>
+
+<div class="vuln-calc">
+    <input type="text" [(ngModel)]="userInput"/>
+    <button (click)="calculate(userInput)">Calculate</button>
+</div>
+
 Output: {{output}}

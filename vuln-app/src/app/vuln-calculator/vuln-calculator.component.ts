@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { compile } from "angular-expressions";
+import { Component, OnInit, Input } from '@angular/core';
+import { flag } from '../flag';
 
 
 @Component({
@@ -9,19 +9,31 @@ import { compile } from "angular-expressions";
 })
 export class VulnCalculatorComponent implements OnInit {
 
-  flag: string = "ctf_flag";
-
+  flag: string = "not_the_ctf_flag";
   output: string = "";
+  @Input() userInput: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    var exp = require("angular-expressions");
+    
+  }
 
-    var evaluate = exp.compile(this.flag);
+  calculate(input: string): void {
+    let actualflag = flag;
+    var expressions = require("angular-expressions");
 
-    this.output = evaluate();
+    // compiles code without sanitizing input
+    var evaluate = expressions.compile(input);
+    var test = evaluate();
 
+    if (test == true) {
+      console.log(actualflag);
+    } else {
+      console.log(test)
+    }
+
+    
   }
 
 }
