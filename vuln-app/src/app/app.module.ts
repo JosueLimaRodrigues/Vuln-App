@@ -5,11 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VulnCalculatorComponent } from './vuln-calculator/vuln-calculator.component';
+import { VulnEncryptionComponent } from './vuln-encryption/vuln-encryption.component';
+import { VulnLoginComponent } from './vuln-login/vuln-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VulnCalculatorComponent
+    VulnCalculatorComponent,
+    VulnEncryptionComponent,
+    VulnLoginComponent
   ],
   imports: [
     BrowserModule,

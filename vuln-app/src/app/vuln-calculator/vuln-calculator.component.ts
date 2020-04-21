@@ -15,25 +15,24 @@ export class VulnCalculatorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {  }
 
   calculate(input: string): void {
     let actualflag = flag;
-    var expressions = require("angular-expressions");
+    var expressions = require("angular-expressions"); // vulnerable library
 
     // compiles code without sanitizing input
     var evaluate = expressions.compile(input);
     var test = evaluate();
 
     if (test == true) {
+      this.output = actualflag;
       console.log(actualflag);
     } else {
+      this.output = test;
       console.log(test)
     }
 
-    
   }
 
 }
